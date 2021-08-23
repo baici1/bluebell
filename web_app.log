@@ -1,0 +1,22 @@
+{"level":"INFO","time":"2021-08-22T21:39:48.367+0800","caller":"bluebell/main.go:69","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-22T21:39:48.373+0800","caller":"bluebell/main.go:78","msg":"Server exiting"}
+{"level":"INFO","time":"2021-08-23T16:11:42.218+0800","caller":"bluebell/main.go:78","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-23T16:11:42.218+0800","caller":"bluebell/main.go:87","msg":"Server exiting"}
+{"level":"INFO","time":"2021-08-23T16:12:51.442+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-23T16:12:51.442+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"INFO","time":"2021-08-23T16:15:48.802+0800","caller":"bluebell/main.go:79","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-23T16:15:48.806+0800","caller":"bluebell/main.go:88","msg":"Server exiting"}
+{"level":"INFO","time":"2021-08-23T18:20:34.815+0800","caller":"logger/logger.go:82","msg":"/ok","status":404,"method":"GET","path":"/ok","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0}
+{"level":"INFO","time":"2021-08-23T18:20:36.633+0800","caller":"logger/logger.go:82","msg":"/ok","status":404,"method":"GET","path":"/ok","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0}
+{"level":"INFO","time":"2021-08-23T18:20:40.274+0800","caller":"logger/logger.go:82","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.0005458}
+{"level":"INFO","time":"2021-08-23T18:21:31.410+0800","caller":"logger/logger.go:82","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.0005198}
+{"level":"INFO","time":"2021-08-23T18:22:36.966+0800","caller":"logger/logger.go:82","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.0003758}
+{"level":"INFO","time":"2021-08-23T18:22:49.425+0800","caller":"bluebell/main.go:80","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-23T18:22:49.435+0800","caller":"bluebell/main.go:89","msg":"Server exiting"}
+{"level":"INFO","time":"2021-08-23T18:22:57.001+0800","caller":"logger/logger.go:82","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0}
+{"level":"INFO","time":"2021-08-23T18:23:01.745+0800","caller":"bluebell/main.go:80","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-23T18:23:03.432+0800","caller":"bluebell/main.go:89","msg":"Server exiting"}
+{"level":"DEBUG","time":"2021-08-23T18:30:10.091+0800","caller":"bluebell/main.go:67","msg":"Listening and serving HTTP on ","port":8080}
+{"level":"INFO","time":"2021-08-23T18:30:15.444+0800","caller":"logger/logger.go:82","msg":"/","status":200,"method":"GET","path":"/","query":"","ip":"::1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36","errors":"","cost":0.0005448}
+{"level":"INFO","time":"2021-08-23T18:30:19.637+0800","caller":"bluebell/main.go:84","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-23T18:30:21.332+0800","caller":"bluebell/main.go:93","msg":"Server exiting"}
