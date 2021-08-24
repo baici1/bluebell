@@ -5,7 +5,7 @@ import (
 	"bluebell/dao/redis"
 	"bluebell/logger"
 	"bluebell/pkg/snowflake"
-	"bluebell/routes"
+	"bluebell/router"
 	"bluebell/settings"
 	"context"
 	"fmt"
@@ -57,7 +57,7 @@ func main() {
 		return
 	}
 	//5.注册路由
-	r := routes.SetUp()
+	r := router.SetUp()
 
 	//6.启动服务 +（优雅关机）
 	srv := &http.Server{
