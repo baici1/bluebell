@@ -46,7 +46,12 @@ func SignUpHandler(c *gin.Context) {
 	//自动 利用第三方库进行字段校验validator库
 	fmt.Println(p)
 	//2.业务处理
-	logic.SignUp()
+	if err := logic.SignUp(&p); err != nil {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "注册失败",
+		})
+		return
+	}
 	//3.返回响应
 	c.JSON(http.StatusOK, gin.H{
 		"msg": "ok",
