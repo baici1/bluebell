@@ -14,6 +14,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// SignUpHandler 用户注册功能
 func SignUpHandler(c *gin.Context) {
 	//1.获取参数和参数校验
 	var p models.ParamSignUp
@@ -29,9 +30,6 @@ func SignUpHandler(c *gin.Context) {
 			})
 			return
 		}
-		//如果参数有误，就直接返回响应
-		//记录日志
-
 		c.JSON(http.StatusOK, gin.H{
 			"msg": translate.RemoveTopStruct(errs.Translate(translate.Trans)),
 		})
@@ -49,6 +47,7 @@ func SignUpHandler(c *gin.Context) {
 	fmt.Println(p)
 	//2.业务处理
 	if err := logic.SignUp(&p); err != nil {
+		zap.L().Error("login.SignUp failed", zap.Error(err))
 		c.JSON(http.StatusOK, gin.H{
 			"msg": "注册失败",
 		})
@@ -57,5 +56,40 @@ func SignUpHandler(c *gin.Context) {
 	//3.返回响应
 	c.JSON(http.StatusOK, gin.H{
 		"msg": "ok",
+	})
+}
+
+func LoginHandler(c *gin.Context) {
+	//获取参数校验
+	p := new(models.ParamLogin)
+	if err := c.ShouldBindJSON(&p); err != nil {
+		//请求参数有误，直接返回响应
+		zap.L().Error("[ERRER]Login with invalid param", zap.Error(err))
+		// 获取validator.ValidationErrors类型的errors
+		errs, ok := err.(validator.ValidationErrors)
+		if !ok {
+			// 非validator.ValidationErrors类型错误直接返回
+			c.JSON(http.StatusOK, gin.H{
+				"msg": err.Error(),
+			})
+			return
+		}
+		//翻译错误
+		c.JSON(http.StatusOK, gin.H{
+			"msg": translate.RemoveTopStruct(errs.Translate(translate.Trans)),
+		})
+		return
+	}
+	//业务逻辑处理
+	if err := logic.Login(p); err != nil {
+		zap.L().Error("[ERRER]logic.Login failed", zap.String("username", p.Username), zap.Error(err))
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "用户名或者密码错误",
+		})
+		return
+	}
+	//返回响应
+	c.JSON(http.StatusOK, gin.H{
+		"msg": "登录成功",
 	})
 }

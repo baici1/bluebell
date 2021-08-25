@@ -2,9 +2,8 @@ package mysql
 
 import (
 	"bluebell/models"
+	"database/sql"
 	"errors"
-
-	"go.uber.org/zap"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -20,7 +19,7 @@ func CheckUserExist(username string) error {
 		return err
 	}
 	if count > 0 {
-		zap.L().Error("用户已存在")
+
 		return errors.New("用户已存在！")
 	}
 	return nil
@@ -40,8 +39,38 @@ func InsertUser(user *models.User) (err error) {
 func encryptPassword(oPassword string) string {
 	hashPassword, err := bcrypt.GenerateFromPassword([]byte(oPassword), bcrypt.MinCost)
 	if err != nil {
-		zap.L().Error("加密密码失败", zap.Any("密码", hashPassword))
+
 		return oPassword
 	}
 	return string(hashPassword)
+}
+
+// CheckPassword 验证加密后的密码是否一致
+func CheckPassword(hashPassword, oPassword string) bool {
+	err := bcrypt.CompareHashAndPassword([]byte(hashPassword), []byte(oPassword))
+	if err != nil {
+		return false
+	}
+	return true
+}
+
+// Login 用户登录功能
+func Login(user *models.User) error {
+	oPassword := user.Password
+	//判断用户是否存在，获取密码
+	sqlStr := `select user_id,username,password from user where username=?`
+	err := db.Get(user, sqlStr, user.Username)
+	//判断用户是否存在
+	if err == sql.ErrNoRows {
+		return errors.New("用户不存在")
+	}
+	if err != nil {
+		//查询数据库出错
+		return err
+	}
+	//判断密码是否正确
+	if !CheckPassword(user.Password, oPassword) {
+		return errors.New("密码错误")
+	}
+	return nil
 }
