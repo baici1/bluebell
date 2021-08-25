@@ -20,6 +20,7 @@ func CheckUserExist(username string) error {
 		return err
 	}
 	if count > 0 {
+		zap.L().Error("用户已存在")
 		return errors.New("用户已存在！")
 	}
 	return nil
