@@ -122,3 +122,10 @@
 {"level":"INFO","time":"2021-08-25T16:52:54.647+0800","caller":"logger/logger.go:94","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0013428}
 {"level":"INFO","time":"2021-08-25T16:55:09.451+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2021-08-25T16:55:09.452+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
+{"level":"INFO","time":"2021-08-26T19:10:13.796+0800","caller":"logger/logger.go:52","msg":"init logger success"}
+{"level":"INFO","time":"2021-08-26T19:10:13.819+0800","caller":"bluebell/main.go:76","msg":"Listening and serving HTTP on ","port":8080}
+{"level":"ERROR","time":"2021-08-26T19:10:39.132+0800","caller":"controllers/user.go:92","msg":"[ERRER]logic.Login failed","username":"1234","error":"用户不存在"}
+{"level":"INFO","time":"2021-08-26T19:10:39.132+0800","caller":"logger/logger.go:94","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0183329}
+{"level":"INFO","time":"2021-08-26T19:11:00.236+0800","caller":"logger/logger.go:94","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0019204}
+{"level":"INFO","time":"2021-08-26T20:03:34.520+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-26T20:03:34.521+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
