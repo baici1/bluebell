@@ -3,6 +3,7 @@ package router
 import (
 	"bluebell/controllers"
 	"bluebell/logger"
+	"bluebell/middlewares"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -11,9 +12,15 @@ import (
 func SetUp() *gin.Engine {
 	r := gin.New()
 	r.Use(logger.GinLogger(), logger.GinRecovery(true))
+	v1 := r.Group("/api/v1")
+	v1.POST("/signup", controllers.SignUpHandler)
+	v1.POST("/login", controllers.LoginHandler)
+	//jwt中间件
+	v1.Use(middlewares.JWTAuthMiddleware())
 
-	r.POST("/signup", controllers.SignUpHandler)
-	r.POST("/login", controllers.LoginHandler)
+	{
+		v1.GET("/community", controllers.CommunityHandler)
+	}
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"msg": "404",

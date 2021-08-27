@@ -129,3 +129,22 @@
 {"level":"INFO","time":"2021-08-26T19:11:00.236+0800","caller":"logger/logger.go:94","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0019204}
 {"level":"INFO","time":"2021-08-26T20:03:34.520+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
 {"level":"INFO","time":"2021-08-26T20:03:34.521+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
+{"level":"INFO","time":"2021-08-27T15:56:47.826+0800","caller":"logger/logger.go:52","msg":"init logger success"}
+{"level":"INFO","time":"2021-08-27T15:56:47.831+0800","caller":"bluebell/main.go:76","msg":"Listening and serving HTTP on ","port":8080}
+{"level":"INFO","time":"2021-08-27T15:57:13.070+0800","caller":"logger/logger.go:94","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0005164}
+{"level":"INFO","time":"2021-08-27T15:57:29.131+0800","caller":"logger/logger.go:94","msg":"/login","status":200,"method":"POST","path":"/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0}
+{"level":"INFO","time":"2021-08-27T15:58:46.692+0800","caller":"logger/logger.go:94","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0065432}
+{"level":"INFO","time":"2021-08-27T15:59:29.292+0800","caller":"logger/logger.go:94","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0009893}
+{"level":"INFO","time":"2021-08-27T15:59:56.628+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T15:59:56.633+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
+{"level":"INFO","time":"2021-08-27T16:00:04.431+0800","caller":"logger/logger.go:52","msg":"init logger success"}
+{"level":"INFO","time":"2021-08-27T16:00:04.434+0800","caller":"bluebell/main.go:76","msg":"Listening and serving HTTP on ","port":8080}
+{"level":"INFO","time":"2021-08-27T16:00:15.192+0800","caller":"logger/logger.go:94","msg":"/api/v1/community","status":200,"method":"GET","path":"/api/v1/community","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0010232}
+{"level":"INFO","time":"2021-08-27T16:00:27.875+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T16:00:27.875+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
+{"level":"INFO","time":"2021-08-27T16:04:17.209+0800","caller":"logger/logger.go:52","msg":"init logger success"}
+{"level":"INFO","time":"2021-08-27T16:04:17.212+0800","caller":"bluebell/main.go:76","msg":"Listening and serving HTTP on ","port":8080}
+{"level":"ERROR","time":"2021-08-27T16:04:23.872+0800","caller":"controllers/user.go:92","msg":"[ERRER]logic.Login failed","username":"123","error":"scannable dest type ptr with >1 columns (3) in result"}
+{"level":"INFO","time":"2021-08-27T16:04:23.872+0800","caller":"logger/logger.go:94","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0032569}
+{"level":"INFO","time":"2021-08-27T16:05:54.237+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-08-27T16:05:54.237+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
