@@ -3,7 +3,6 @@ package mysql
 import (
 	"bluebell/models"
 	"database/sql"
-	"errors"
 
 	"golang.org/x/crypto/bcrypt"
 )
@@ -13,11 +12,6 @@ import (
 
 //业务中不要随便出现字符串，尽量都用变量去代替
 //区分错误
-var (
-	ErrorUserExist       = errors.New("用户已存在！")
-	ErrorUserNotExist    = errors.New("用户不存在")
-	ErrorInvalidPassword = errors.New("密码错误")
-)
 
 // CheckUserExist 检查用户是否在数据库中
 func CheckUserExist(username string) error {
