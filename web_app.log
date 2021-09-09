@@ -224,3 +224,23 @@
 {"level":"INFO","time":"2021-09-08T21:55:35.102+0800","caller":"bluebell/main.go:76","msg":"Listening and serving HTTP on ","port":8080}
 {"level":"INFO","time":"2021-09-08T21:55:37.780+0800","caller":"logger/logger.go:94","msg":"/api/v1/community/1","status":200,"method":"GET","path":"/api/v1/community/1","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0011566}
 {"level":"INFO","time":"2021-09-08T21:57:28.558+0800","caller":"logger/logger.go:94","msg":"/api/v1/community/2","status":200,"method":"GET","path":"/api/v1/community/2","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0010002}
+{"level":"INFO","time":"2021-09-08T21:59:55.359+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-08T21:59:55.359+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
+{"level":"INFO","time":"2021-09-09T20:05:11.625+0800","caller":"logger/logger.go:52","msg":"init logger success"}
+{"level":"INFO","time":"2021-09-09T20:05:11.648+0800","caller":"bluebell/main.go:76","msg":"Listening and serving HTTP on ","port":8080}
+{"level":"INFO","time":"2021-09-09T20:06:04.435+0800","caller":"logger/logger.go:94","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0299896}
+{"level":"ERROR","time":"2021-09-09T20:08:48.988+0800","caller":"controllers/post.go:19","msg":"CreatePostHandler with invalid param","error":"invalid character '}' looking for beginning of object key string"}
+{"level":"INFO","time":"2021-09-09T20:08:48.988+0800","caller":"logger/logger.go:94","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0005966}
+{"level":"ERROR","time":"2021-09-09T20:09:24.618+0800","caller":"controllers/post.go:19","msg":"CreatePostHandler with invalid param","error":"invalid character '}' looking for beginning of object key string"}
+{"level":"INFO","time":"2021-09-09T20:09:24.619+0800","caller":"logger/logger.go:94","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0006718}
+{"level":"INFO","time":"2021-09-09T20:11:47.681+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-09T20:11:47.694+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
+{"level":"INFO","time":"2021-09-09T20:11:52.982+0800","caller":"logger/logger.go:52","msg":"init logger success"}
+{"level":"INFO","time":"2021-09-09T20:11:52.986+0800","caller":"bluebell/main.go:76","msg":"Listening and serving HTTP on ","port":8080}
+{"level":"ERROR","time":"2021-09-09T20:11:55.558+0800","caller":"controllers/post.go:19","msg":"CreatePostHandler with invalid param","error":"invalid character '}' looking for beginning of object key string"}
+{"level":"INFO","time":"2021-09-09T20:11:55.558+0800","caller":"logger/logger.go:94","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0005123}
+{"level":"ERROR","time":"2021-09-09T20:12:30.316+0800","caller":"controllers/post.go:19","msg":"CreatePostHandler with invalid param","error":"json: cannot unmarshal string into Go struct field Post.community_id of type int64"}
+{"level":"INFO","time":"2021-09-09T20:12:30.316+0800","caller":"logger/logger.go:94","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0008528}
+{"level":"INFO","time":"2021-09-09T20:12:54.891+0800","caller":"logger/logger.go:94","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0214168}
+{"level":"INFO","time":"2021-09-09T20:25:30.377+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-09T20:25:30.386+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
