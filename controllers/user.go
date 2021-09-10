@@ -20,7 +20,7 @@ func SignUpHandler(c *gin.Context) {
 	var p models.ParamSignUp
 	if err := c.ShouldBindJSON(&p); err != nil {
 		//请求参数有误，直接返回响应
-		zap.L().Error("[ERRER]SignUp with invalid param", zap.Error(err))
+		zap.L().Error("[ERROR]SignUp with invalid param", zap.Error(err))
 		// 获取validator.ValidationErrors类型的errors
 		errs, ok := err.(validator.ValidationErrors)
 		if !ok {
@@ -68,7 +68,7 @@ func LoginHandler(c *gin.Context) {
 	p := new(models.ParamLogin)
 	if err := c.ShouldBindJSON(&p); err != nil {
 		//请求参数有误，直接返回响应
-		zap.L().Error("[ERRER]Login with invalid param", zap.Error(err))
+		zap.L().Error("[ERROR]Login with invalid param", zap.Error(err))
 		// 获取validator.ValidationErrors类型的errors
 		errs, ok := err.(validator.ValidationErrors)
 		if !ok {
@@ -89,7 +89,7 @@ func LoginHandler(c *gin.Context) {
 	//业务逻辑处理
 	token, err := logic.Login(p)
 	if err != nil {
-		zap.L().Error("[ERRER]logic.Login failed", zap.String("username", p.Username), zap.Error(err))
+		zap.L().Error("[ERROR]logic.Login failed", zap.String("username", p.Username), zap.Error(err))
 		//c.JSON(http.StatusOK, gin.H{
 		//	"msg": "用户名或者密码错误",
 		//})
