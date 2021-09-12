@@ -78,7 +78,10 @@ func VoteForPost(userID, postID string, direction float64) error {
 		})
 	}
 	_, err := pipeline.Exec()
-	zap.L().Error("更新分数或者记录投票 失败", zap.Error(err))
+	if err != nil {
+		zap.L().Error("更新分数或者记录投票 失败", zap.Error(err))
+		return err
+	}
 	return err
 }
 

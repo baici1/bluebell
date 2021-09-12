@@ -4,6 +4,7 @@ import (
 	"bluebell/logic"
 	"bluebell/models"
 	"bluebell/pkg/translate"
+	"fmt"
 
 	"go.uber.org/zap"
 
@@ -27,6 +28,7 @@ func PostVoteController(c *gin.Context) {
 		ResponseErrorWithMsg(c, CodeInvalidParam, errData)
 		return
 	}
+	fmt.Println(p)
 	userID, err := GetCurrentUser(c)
 	if err != nil {
 		ResponseError(c, CodeNeedLogin)
