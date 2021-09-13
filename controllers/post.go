@@ -66,27 +66,11 @@ func GetPostDetailHandler(c *gin.Context) {
 	ResponseSuccess(c, data)
 }
 
-// GetPostListHandler 获取帖子列表函数
+//// GetPostListHandler 获取帖子列表函数
 func GetPostListHandler(c *gin.Context) {
 	//获取分页参数
-	//pageStr := c.Query("offset")
-	//sizeStr := c.Query("limit")
-	//var (
-	//	page int64
-	//	size int64
-	//	err  error
-	//)
-	//page, err = strconv.ParseInt(pageStr, 10, 64)
-	//if err != nil {
-	//	page = 0
-	//}
-	//size, err = strconv.ParseInt(sizeStr, 10, 64)
-	//if err != nil {
-	//	size = 10
-	//}
 	//整合到一个函数里面
 	page, size := getPageInfo(c)
-
 	data, err := logic.GetPostList(page, size)
 	if err != nil {
 		zap.L().Error("logic.GetPostList", zap.Error(err))
@@ -94,4 +78,31 @@ func GetPostListHandler(c *gin.Context) {
 		return
 	}
 	ResponseSuccess(c, data)
+}
+
+// GetPostListHandler2 根据前端传来的参数动态获取帖子列表接口
+//按创建时间或者点赞分数
+func GetPostListHandler2(c *gin.Context) {
+	//获取flag（获取时间排序的帖子还是点赞分数）
+	//初始化结构体指定初始参数
+	p := &models.ParamPostList{
+		Page:  1,
+		Size:  10,
+		Order: models.OrderTime,
+	}
+	if err := c.ShouldBindQuery(p); err != nil {
+		zap.L().Error("GetPostListHandler2 with invalid params", zap.Error(err))
+		ResponseError(c, CodeInvalidParam)
+		return
+	}
+	//获取帖子的数据
+	data, err := logic.GetPostList2(p)
+	if err != nil {
+		zap.L().Error("logic.GetPostList2", zap.Error(err))
+		ResponseError(c, CodeServerBusy)
+		return
+	}
+	//返回信息
+	ResponseSuccess(c, data)
+
 }

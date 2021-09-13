@@ -32,7 +32,8 @@ func getPageInfo(c *gin.Context) (int64, int64) {
 	var (
 		page int64
 		size int64
-		err  error
+
+		err error
 	)
 	page, err = strconv.ParseInt(pageStr, 10, 64)
 	if err != nil {
