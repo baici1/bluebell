@@ -96,9 +96,9 @@ func GetPostListHandler2(c *gin.Context) {
 		return
 	}
 	//获取帖子的数据
-	data, err := logic.GetPostList2(p)
+	data, err := logic.GetPostListNew(p) //更新：两种（查全部或者按社区）查询帖子列表数据合二为一
 	if err != nil {
-		zap.L().Error("logic.GetPostList2", zap.Error(err))
+		zap.L().Error("logic.GetPostListNew", zap.Error(err))
 		ResponseError(c, CodeServerBusy)
 		return
 	}
@@ -108,29 +108,30 @@ func GetPostListHandler2(c *gin.Context) {
 }
 
 // GetCommunityPostListHandler 根据社区查询帖子列表
-func GetCommunityPostListHandler(c *gin.Context) {
-	//获取flag（获取时间排序的帖子还是点赞分数）
-	//初始化结构体指定初始参数
-	p := &models.ParamCommunityPostList{
-		ParamPostList: &models.ParamPostList{
-			Page:  1,
-			Size:  10,
-			Order: models.OrderTime,
-		},
-		CommunityID: 1,
-	}
-	if err := c.ShouldBindQuery(p); err != nil {
-		zap.L().Error("ParamCommunityPostList with invalid params", zap.Error(err))
-		ResponseError(c, CodeInvalidParam)
-		return
-	}
-	//获取帖子的数据
-	data, err := logic.GetCommunityPostList2(p)
-	if err != nil {
-		zap.L().Error("logic.GetCommunityPostList2", zap.Error(err))
-		ResponseError(c, CodeServerBusy)
-		return
-	}
-	//返回信息
-	ResponseSuccess(c, data)
-}
+//func GetCommunityPostListHandler(c *gin.Context) {
+//	//获取flag（获取时间排序的帖子还是点赞分数）
+//	//初始化结构体指定初始参数
+//	p := &models.ParamCommunityPostList{
+//		ParamPostList: &models.ParamPostList{
+//			Page:  1,
+//			Size:  10,
+//			Order: models.OrderTime,
+//		},
+//		CommunityID: 1,
+//	}
+//	//获取参数
+//	if err := c.ShouldBindQuery(p); err != nil {
+//		zap.L().Error("ParamCommunityPostList with invalid params", zap.Error(err))
+//		ResponseError(c, CodeInvalidParam)
+//		return
+//	}
+//	//获取帖子的数据
+//	data, err := logic.GetCommunityPostList2(p)
+//	if err != nil {
+//		zap.L().Error("logic.GetCommunityPostList2", zap.Error(err))
+//		ResponseError(c, CodeServerBusy)
+//		return
+//	}
+//	//返回信息
+//	ResponseSuccess(c, data)
+//}

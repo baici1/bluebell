@@ -521,3 +521,26 @@
 {"level":"DEBUG","time":"2021-09-14T14:28:59.555+0800","caller":"logic/vote.go:31","msg":"VoteForPost","userID":3014426348425216,"postID":9559396958015488,"direction":1}
 {"level":"ERROR","time":"2021-09-14T14:28:59.556+0800","caller":"controllers/vote.go:39","msg":"logic.VoteForPost failed","error":"重复投票"}
 {"level":"INFO","time":"2021-09-14T14:28:59.556+0800","caller":"logger/logger.go:94","msg":"/api/v1/vote","status":200,"method":"POST","path":"/api/v1/vote","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0015309}
+{"level":"INFO","time":"2021-09-14T16:06:36.030+0800","caller":"bluebell/main.go:93","msg":"Shutdown Server ..."}
+{"level":"INFO","time":"2021-09-14T16:06:36.031+0800","caller":"bluebell/main.go:102","msg":"Server exiting"}
+{"level":"INFO","time":"2021-09-14T16:06:41.657+0800","caller":"logger/logger.go:52","msg":"init logger success"}
+{"level":"INFO","time":"2021-09-14T16:06:41.664+0800","caller":"bluebell/main.go:76","msg":"Listening and serving HTTP on ","port":8080}
+{"level":"INFO","time":"2021-09-14T16:06:45.218+0800","caller":"logger/logger.go:94","msg":"/api/v1/login","status":200,"method":"POST","path":"/api/v1/login","query":"","ip":"::1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0033613}
+{"level":"WARN","time":"2021-09-14T16:07:14.057+0800","caller":"logic/post.go:143","msg":" redis.GetCommunityPostIDsInOrder get ids return 0 data"}
+{"level":"DEBUG","time":"2021-09-14T16:07:14.057+0800","caller":"logic/post.go:145","msg":"GetCommunityPostIDsInOrder","ids":[]}
+{"level":"ERROR","time":"2021-09-14T16:07:14.058+0800","caller":"logic/post.go:193","msg":"GetPostListNew failed","error":"empty slice passed to 'in' query"}
+{"level":"ERROR","time":"2021-09-14T16:07:14.058+0800","caller":"controllers/post.go:101","msg":"logic.GetPostListNew","error":"empty slice passed to 'in' query"}
+{"level":"INFO","time":"2021-09-14T16:07:14.058+0800","caller":"logger/logger.go:94","msg":"/api/v1/posts2","status":200,"method":"GET","path":"/api/v1/posts2","query":"order=time&community_id=1&","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0019846}
+{"level":"WARN","time":"2021-09-14T16:07:45.391+0800","caller":"logic/post.go:143","msg":" redis.GetCommunityPostIDsInOrder get ids return 0 data"}
+{"level":"DEBUG","time":"2021-09-14T16:07:45.391+0800","caller":"logic/post.go:145","msg":"GetCommunityPostIDsInOrder","ids":[]}
+{"level":"ERROR","time":"2021-09-14T16:07:45.392+0800","caller":"logic/post.go:193","msg":"GetPostListNew failed","error":"empty slice passed to 'in' query"}
+{"level":"ERROR","time":"2021-09-14T16:07:45.392+0800","caller":"controllers/post.go:101","msg":"logic.GetPostListNew","error":"empty slice passed to 'in' query"}
+{"level":"INFO","time":"2021-09-14T16:07:45.392+0800","caller":"logger/logger.go:94","msg":"/api/v1/posts2","status":200,"method":"GET","path":"/api/v1/posts2","query":"order=time&community_id=1&","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.002056}
+{"level":"INFO","time":"2021-09-14T16:08:58.660+0800","caller":"logger/logger.go:94","msg":"/api/v1/posts2","status":200,"method":"POST","path":"/api/v1/posts2","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0}
+{"level":"INFO","time":"2021-09-14T16:09:07.550+0800","caller":"logger/logger.go:94","msg":"/api/v1/post","status":200,"method":"POST","path":"/api/v1/post","query":"","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0118484}
+{"level":"DEBUG","time":"2021-09-14T16:09:21.663+0800","caller":"logic/post.go:96","msg":"GetPostList2","ids":["10269952740364288","9559396958015488","9559158620884992"]}
+{"level":"DEBUG","time":"2021-09-14T16:09:21.663+0800","caller":"logic/post.go:103","msg":"mysql.GetPostListByIDs","posts":[{"id":"10269952740364288","title":"杨澳宇4","content":"123","author_id":3014426348425216,"community_id":1,"status":0,"create_time":"2021-09-14T16:09:07Z"},{"id":"9559396958015488","title":"杨澳宇3","content":"123","author_id":3014426348425216,"community_id":1,"status":0,"create_time":"2021-09-12T17:05:37Z"},{"id":"9559158620884992","title":"杨澳宇2","content":"123","author_id":3014426348425216,"community_id":1,"status":0,"create_time":"2021-09-12T17:04:41Z"}]}
+{"level":"INFO","time":"2021-09-14T16:09:21.665+0800","caller":"logger/logger.go:94","msg":"/api/v1/posts2","status":200,"method":"GET","path":"/api/v1/posts2","query":"order=time","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.0024901}
+{"level":"DEBUG","time":"2021-09-14T16:09:37.965+0800","caller":"logic/post.go:145","msg":"GetCommunityPostIDsInOrder","ids":["10269952740364288"]}
+{"level":"DEBUG","time":"2021-09-14T16:09:37.967+0800","caller":"logic/post.go:152","msg":"mysql.GetPostListByIDs","posts":[{"id":"10269952740364288","title":"杨澳宇4","content":"123","author_id":3014426348425216,"community_id":1,"status":0,"create_time":"2021-09-14T16:09:07Z"}]}
+{"level":"INFO","time":"2021-09-14T16:09:37.968+0800","caller":"logger/logger.go:94","msg":"/api/v1/posts2","status":200,"method":"GET","path":"/api/v1/posts2","query":"order=time&community_id=1","ip":"127.0.0.1","user-agent":"PostmanRuntime/7.28.4","errors":"","cost":0.003401}
