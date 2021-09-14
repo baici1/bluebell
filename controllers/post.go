@@ -66,7 +66,7 @@ func GetPostDetailHandler(c *gin.Context) {
 	ResponseSuccess(c, data)
 }
 
-//// GetPostListHandler 获取帖子列表函数
+// GetPostListHandler 获取帖子列表函数
 func GetPostListHandler(c *gin.Context) {
 	//获取分页参数
 	//整合到一个函数里面

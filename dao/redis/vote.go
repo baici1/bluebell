@@ -21,6 +21,7 @@ const (
 // ErrorVoteTimeExpire 错误码
 var (
 	ErrorVoteTimeExpire = errors.New("投票时间已过")
+	ErrorVoteRepeated   = errors.New("重复投票")
 )
 
 //分析投票功能
@@ -56,8 +57,13 @@ func VoteForPost(userID, postID string, direction float64) error {
 	//2.更新帖子分数
 	//先查询先前投票记录
 	odir := rdb.ZScore(getRedisKey(KeyPostVotedZSetPrefix+postID), userID).Val()
+	//如果这一次投票与之前保存的一致，就报错（不允许重复投票）
+	if direction == odir {
+		return ErrorVoteRepeated
+	}
 	var pn float64
 	//根据新投票记录和旧地投票记录相比 高的就是需要加分 低地需要减分
+
 	if direction > odir {
 		pn = 1
 	} else {

@@ -61,8 +61,8 @@ func GetPostList(page, size int64) (data []*models.ApiPostDetail, err error) {
 		zap.L().Error(" mysql.GetPostList failed", zap.Error(err))
 		return
 	}
-	//获取用户详情数据
 	for _, post := range posts {
+		//获取用户详情数据
 		user, err := mysql.GetUserById(post.AuthorID)
 		if err != nil {
 			zap.L().Error("mysql.GetuserById failed", zap.Int64("AuthorID", post.AuthorID), zap.Error(err))
@@ -101,8 +101,14 @@ func GetPostList2(p *models.ParamPostList) (data []*models.ApiPostDetail, err er
 		return
 	}
 	zap.L().Debug("mysql.GetPostListByIDs", zap.Any("posts", posts))
+	//提前查好每个帖子投票的数据
+	votes, err := redis.GetPostVoteData(ids)
+	if err != nil {
+		return
+	}
 	//根据post获取作者和社区信息填充到帖子中
-	for _, post := range posts {
+	for index, post := range posts {
+		//获取用户详情数据
 		user, err := mysql.GetUserById(post.AuthorID)
 		if err != nil {
 			zap.L().Error("mysql.GetuserById failed", zap.Int64("AuthorID", post.AuthorID), zap.Error(err))
@@ -116,6 +122,7 @@ func GetPostList2(p *models.ParamPostList) (data []*models.ApiPostDetail, err er
 		}
 		postDetail := &models.ApiPostDetail{
 			AuthorName:      user.Username,
+			VoteNum:         votes[index],
 			Post:            post,
 			CommunityDetail: community,
 		}

@@ -15,6 +15,7 @@ const (
 	CodeServerBusy                            // 服务繁忙
 	CodeInvalidToken
 	CodeNeedLogin
+	CodeOperation
 )
 
 var codeMsgMap = map[ResCode]string{
@@ -26,6 +27,7 @@ var codeMsgMap = map[ResCode]string{
 	CodeServerBusy:      "服务器繁忙",
 	CodeNeedLogin:       "需要登录",
 	CodeInvalidToken:    "无效token",
+	CodeOperation:       "操作错误",
 }
 
 // Msg 返回错误码的对应的提示信息

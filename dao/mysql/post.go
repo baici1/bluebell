@@ -2,7 +2,6 @@ package mysql
 
 import (
 	"bluebell/models"
-	"fmt"
 	"strings"
 
 	"github.com/jmoiron/sqlx"
@@ -40,8 +39,6 @@ func GetPostListByIDs(ids []string) (postlist []*models.Post, err error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(query)
-	fmt.Println(args)
 	query = db.Rebind(query)
 	err = db.Select(&postlist, query, args...)
 	return
