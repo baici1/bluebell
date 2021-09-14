@@ -106,3 +106,31 @@ func GetPostListHandler2(c *gin.Context) {
 	ResponseSuccess(c, data)
 
 }
+
+// GetCommunityPostListHandler 根据社区查询帖子列表
+func GetCommunityPostListHandler(c *gin.Context) {
+	//获取flag（获取时间排序的帖子还是点赞分数）
+	//初始化结构体指定初始参数
+	p := &models.ParamCommunityPostList{
+		ParamPostList: &models.ParamPostList{
+			Page:  1,
+			Size:  10,
+			Order: models.OrderTime,
+		},
+		CommunityID: 1,
+	}
+	if err := c.ShouldBindQuery(p); err != nil {
+		zap.L().Error("ParamCommunityPostList with invalid params", zap.Error(err))
+		ResponseError(c, CodeInvalidParam)
+		return
+	}
+	//获取帖子的数据
+	data, err := logic.GetCommunityPostList2(p)
+	if err != nil {
+		zap.L().Error("logic.GetCommunityPostList2", zap.Error(err))
+		ResponseError(c, CodeServerBusy)
+		return
+	}
+	//返回信息
+	ResponseSuccess(c, data)
+}

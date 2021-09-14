@@ -3,6 +3,7 @@ package redis
 import (
 	"errors"
 	"math"
+	"strconv"
 	"time"
 
 	"go.uber.org/zap"
@@ -92,7 +93,7 @@ func VoteForPost(userID, postID string, direction float64) error {
 }
 
 // CreatePost 实现redis 添加文章的时间和分数
-func CreatePost(postID int64) error {
+func CreatePost(postID, communityID int64) error {
 	//事务执行 为文章添加时间，为文章添加分数
 	pipeline := rdb.TxPipeline()
 	pipeline.ZAdd(getRedisKey(KeyPostTimeZSet), redis.Z{
@@ -103,6 +104,9 @@ func CreatePost(postID int64) error {
 		Score:  0,
 		Member: postID,
 	})
+	//补充：把帖子id加到社区set
+	ckey := getRedisKey(KeyCommunitySetPrefix + strconv.Itoa(int(communityID)))
+	pipeline.SAdd(ckey, postID)
 	_, err := pipeline.Exec()
 	return err
 }
