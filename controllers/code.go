@@ -13,9 +13,9 @@ const (
 	CodeUserNoExist                           //  用户不存在
 	CodeInvalidPassword                       //  用户名或密码错误
 	CodeServerBusy                            // 服务繁忙
-	CodeInvalidToken
-	CodeNeedLogin
-	CodeOperation
+	CodeInvalidToken                          //token无效
+	CodeNeedLogin                             //需要登录
+	CodeOperation                             //错误操作
 )
 
 var codeMsgMap = map[ResCode]string{

@@ -21,6 +21,17 @@ import (
 	"os"
 )
 
+// @title bluebell项目接口文档
+// @version 1.0
+// @description Go web项目实战
+
+// @contact.name 杨澳宇
+
+// @license.name Apache 2.0
+// @license.url http://www.apache.org/licenses/LICENSE-2.0.html
+
+// @host localhost:8080
+// @BasePath /api/v1
 func main() {
 	//获取命令行参数
 	if len(os.Args) < 2 {

@@ -5,13 +5,15 @@ import (
 	"bluebell/logger"
 	"bluebell/middlewares"
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
 
 func SetUp() *gin.Engine {
 	r := gin.New()
-	r.Use(logger.GinLogger(), logger.GinRecovery(true))
+	//每两秒限制一个
+	r.Use(logger.GinLogger(), logger.GinRecovery(true), middlewares.RateLimitMiddleware(time.Second*2, 1))
 	v1 := r.Group("/api/v1")
 	v1.POST("/signup", controllers.SignUpHandler)
 	v1.POST("/login", controllers.LoginHandler)
