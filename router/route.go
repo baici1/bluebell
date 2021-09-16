@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
 )
 
@@ -30,6 +31,7 @@ func SetUp() *gin.Engine {
 		v1.GET("/posts2", controllers.GetPostListHandler2)
 		v1.POST("/vote", controllers.PostVoteController)
 	}
+	pprof.Register(r) //注册pprof路由
 	r.NoRoute(func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"msg": "404",
